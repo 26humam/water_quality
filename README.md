@@ -161,7 +161,7 @@ Tahapan pemodelan merupakan inti dari proses analisis prediktif, di mana pada ta
 
 ### 1.	Baseline Modeling (Default Parameters)
 #### K-Nearest Neighbors (KNN)
-KNN bekerja dengan cara menghitung jarak antara data baru dengan seluruh data pelatihan, kemudian memilih k tetangga terdekat. Kelas dari data baru ditentukan berdasarkan mayoritas kelas dari tetangga-tetangga tersebut. Jarak yang umum digunakan adalah Euclidean distance.
+KNN bekerja dengan cara menghitung jarak antara data baru dengan seluruh data pelatihan, kemudian memilih _k_ tetangga terdekat. Kelas dari data baru ditentukan berdasarkan mayoritas kelas dari tetangga-tetangga tersebut. Jarak yang umum digunakan adalah _Euclidean distance_.
 Kelebihan:
 -	Sederhana dan tidak memerlukan pelatihan secara eksplisit (lazy learner)
 -	Lebih cocok untuk masalah klasifikasi multi kelas
@@ -176,7 +176,7 @@ Parameter:
 -	`p=2`: menggunakan Euclidean distance
 
 #### Suport Vector Machine (SVM)
-SVM mencari hyperplane terbaik yang memisahkan dua kelas data dengan margin terbesar. Untuk data yang tidak linear, SVM menggunakan fungsi kernel (misalnya RBF) untuk memetakan data ke dimensi lebih tinggi agar bisa dipisahkan secara linear di ruang tersebut.
+SVM mencari _hyperplane_ terbaik yang memisahkan dua kelas data dengan margin terbesar. Untuk data yang tidak linear, SVM menggunakan fungsi kernel (misalnya RBF) untuk memetakan data ke dimensi lebih tinggi agar bisa dipisahkan secara linear di ruang tersebut.
 Kelebihan:
 -	Efektif dalam ruang berdimensi tinggi
 -	Masih efektif meskipun jumlah fitur lebih besar dari jumlah sampel
@@ -191,7 +191,7 @@ Parameter:
 -	`gamma='scale'`: otomatis menghitung gamma berdasarkan fitur
 
 #### Random Forest
-Random Forest adalah ensemble dari banyak decision tree. Setiap pohon dilatih pada subset acak dari data dan subset acak dari fitur. Hasil akhir ditentukan berdasarkan voting mayoritas dari seluruh pohon (untuk klasifikasi). Strategi ini membantu mengurangi overfitting dan meningkatkan generalisasi.
+Random Forest adalah _ensemble_ dari banyak Decision Tree. Setiap pohon dilatih pada subset acak dari data dan subset acak dari fitur. Hasil akhir ditentukan berdasarkan _voting_ mayoritas dari seluruh pohon (untuk klasifikasi). Strategi ini membantu mengurangi _overfitting_ dan meningkatkan generalisasi.
 Kelebihan:
 -	Dapat menangani data non-linear dan fitur dalam jumlah besar.
 -	Lebih tahan terhadap _overfitting_ dibanding single Decision Tree.
@@ -207,7 +207,7 @@ Parameter:
 -	`criterion='gini'`: mengukur kualitas split dengan Gini impurity.
 
 #### Gradient Boosting
-Gradient Boosting membangun model secara bertahap. Setiap model baru dilatih untuk memperbaiki kesalahan dari model sebelumnya, dengan menggunakan pendekatan gradient descent terhadap fungsi loss. Hasil akhir adalah kombinasi dari semua model yang dibentuk secara berturut-turut.
+Gradient Boosting membangun model secara bertahap. Setiap model baru dilatih untuk memperbaiki kesalahan dari model sebelumnya, dengan menggunakan pendekatan _gradient descent_ terhadap fungsi loss. Hasil akhir adalah kombinasi dari semua model yang dibentuk secara berturut-turut.
 Kelebihan:
 -	Akurasi tinggi, bekerja baik pada data kompleks.
 -	Menangani _imbalance class_ dengan baik.

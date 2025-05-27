@@ -104,11 +104,11 @@ Label yang menunjukkan apakah air aman untuk dikonsumsi (1) atau tidak (0).
 
 -	Distribusi Data
     Visualisasi histogram dilakukan untuk mengevaluasi distribusi tiap fitur dan mengenali data apakah terdistribusi normal atau tidak. Sebagian besar fitur menunjukkan distribusi normal, meskipun ada beberapa yang sedikit _skewed_.
-    ![Distribusi Data](https://drive.google.com/uc?export=view&id=1lhAw3zm9Djl94iESPBBahUE0QFxUjX96)
+    ![Distribusi Data](https://github.com/26humam/water_quality/blob/main/distribusi%20data.png?raw=true)
 
 -	Korelasi antar Variabel
     Analisis korelasi menggunakan _heatmap_ dilakukan untuk mengetahui hubungan antar fitur. Hasil menunjukkan bahwa tidak ada fitur tunggal yang sangat dominan, sehingga semua fitur relevan untuk digunakan dalam model.
-    ![Heatmap Korelasi](https://drive.google.com/uc?export=view&id=1JWcyekmZpRIdD0-NPIXkLUaw7KfijEu7)
+    ![Heatmap Korelasi](https://github.com/26humam/water_quality/blob/main/heatmap.png?raw=true)
 
 -	Distribusi Variabel Target
     Visualisasi sebaran variabel target membantu untuk memutuskan melakukan penyeimbangan data atau tidak. Distribusi target potability menunjukkan adanya ketidakseimbangan kelas.
@@ -117,11 +117,11 @@ Label yang menunjukkan apakah air aman untuk dikonsumsi (1) atau tidak (0).
     
     Distribusi ini menandakan adanya imbalance, sehingga perlu dilakukan _balancing data_, yang akan dilakukan pada tahap _preprocessing_.
  	
-    ![Distribusi Variabel Target]([https://imgur.com/a/GPOWpkh](https://drive.google.com/uc?export=view&id=19e94OcW3gYuf64ukMrH02zg4LlGE9c5n))
+    ![Distribusi Variabel Target](https://github.com/26humam/water_quality/blob/main/distribusi%20target.png?raw=true)
 
 -	Boxplot Fitur terhadap Target
     Visualisasi boxplot bertujuan untuk melihat distribusi setiap fitur terhadap target serta mengidentifikasi _outlier_. Sebagian fitur memiliki _outlier_ yang perlu ditangani dalam proses kali ini.
-    ![Boxplot Fitur](https://drive.google.com/uc?export=view&id=1HlDh_1t5ZYYGvxSzgR73nKTEI8Ay-Thk)
+    ![Boxplot Fitur](https://github.com/26humam/water_quality/blob/main/boxplot.png?raw=true)
 
 ## Data Preparation
 Tahapan data preparation atau _preprocessing_ dilakukan untuk memastikan data yang akan digunakan selama proses pelatihan model ML berada dalam kondisi optimal, tidak ada _noise_, konsisten, serta memenuhi keperluan yang dibutuhkan oleh model. Adapun yang dilakukan pada proyek ini adalah sebagai berikut:
@@ -161,6 +161,7 @@ Tahapan pemodelan merupakan inti dari proses analisis prediktif, di mana pada ta
 
 ### 1.	Baseline Modeling (Default Parameters)
 #### K-Nearest Neighbors (KNN)
+KNN bekerja dengan cara menghitung jarak antara data baru dengan seluruh data pelatihan, kemudian memilih k tetangga terdekat. Kelas dari data baru ditentukan berdasarkan mayoritas kelas dari tetangga-tetangga tersebut. Jarak yang umum digunakan adalah Euclidean distance.
 Kelebihan:
 -	Sederhana dan tidak memerlukan pelatihan secara eksplisit (lazy learner)
 -	Lebih cocok untuk masalah klasifikasi multi kelas
@@ -175,6 +176,7 @@ Parameter:
 -	`p=2`: menggunakan Euclidean distance
 
 #### Suport Vector Machine (SVM)
+SVM mencari hyperplane terbaik yang memisahkan dua kelas data dengan margin terbesar. Untuk data yang tidak linear, SVM menggunakan fungsi kernel (misalnya RBF) untuk memetakan data ke dimensi lebih tinggi agar bisa dipisahkan secara linear di ruang tersebut.
 Kelebihan:
 -	Efektif dalam ruang berdimensi tinggi
 -	Masih efektif meskipun jumlah fitur lebih besar dari jumlah sampel
@@ -189,6 +191,7 @@ Parameter:
 -	`gamma='scale'`: otomatis menghitung gamma berdasarkan fitur
 
 #### Random Forest
+Random Forest adalah ensemble dari banyak decision tree. Setiap pohon dilatih pada subset acak dari data dan subset acak dari fitur. Hasil akhir ditentukan berdasarkan voting mayoritas dari seluruh pohon (untuk klasifikasi). Strategi ini membantu mengurangi overfitting dan meningkatkan generalisasi.
 Kelebihan:
 -	Dapat menangani data non-linear dan fitur dalam jumlah besar.
 -	Lebih tahan terhadap _overfitting_ dibanding single Decision Tree.
@@ -204,6 +207,7 @@ Parameter:
 -	`criterion='gini'`: mengukur kualitas split dengan Gini impurity.
 
 #### Gradient Boosting
+Gradient Boosting membangun model secara bertahap. Setiap model baru dilatih untuk memperbaiki kesalahan dari model sebelumnya, dengan menggunakan pendekatan gradient descent terhadap fungsi loss. Hasil akhir adalah kombinasi dari semua model yang dibentuk secara berturut-turut.
 Kelebihan:
 -	Akurasi tinggi, bekerja baik pada data kompleks.
 -	Menangani _imbalance class_ dengan baik.

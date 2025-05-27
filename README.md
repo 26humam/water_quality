@@ -117,7 +117,7 @@ Label yang menunjukkan apakah air aman untuk dikonsumsi (1) atau tidak (0).
     
     Distribusi ini menandakan adanya imbalance, sehingga perlu dilakukan _balancing data_, yang akan dilakukan pada tahap _preprocessing_.
  	
-    ![Distribusi Variabel Target](https://drive.google.com/uc?export=view&id=19e94OcW3gYuf64ukMrH02zg4LlGE9c5n)
+    ![Distribusi Variabel Target](https://imgur.com/a/GPOWpkh)
 
 -	Boxplot Fitur terhadap Target
     Visualisasi boxplot bertujuan untuk melihat distribusi setiap fitur terhadap target serta mengidentifikasi _outlier_. Sebagian fitur memiliki _outlier_ yang perlu ditangani dalam proses kali ini.
